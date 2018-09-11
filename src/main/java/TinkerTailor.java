@@ -13,4 +13,10 @@ public class TinkerTailor {
         this.step = step;
         fillList();
     }
+
+    private void fillList() {
+        for (int i = 0; i < this.size; i++) {
+            this.list.add(i + 1);
+        }
+    }
 }
