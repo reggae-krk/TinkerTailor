@@ -28,4 +28,18 @@ public class TinkerTailor {
         if(next == this.size) return 0;
         return next;
     }
+
+    public int getWinner() {
+        int removedIndex = this.step - 1;
+        this.list.remove(removedIndex);
+        this.size--;
+        System.out.println(size);
+        while (this.size > 2) {
+            int indexToRemove = nextStep(removedIndex);
+            this.list.remove(indexToRemove);
+            this.size--;
+            removedIndex = indexToRemove;
+        }
+        return this.list.get(0);
+    }
 }
